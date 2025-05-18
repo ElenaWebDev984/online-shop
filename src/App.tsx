@@ -2,6 +2,7 @@ import './App.css'
 import {Header} from "./Header.tsx";
 import {BestSellers} from "./BestSellers.tsx";
 import {Route, Routes} from "react-router";
+import {Product} from "./Product.tsx";
 
 function App() {
     return (
@@ -9,6 +10,7 @@ function App() {
             <Header />
             <Routes>
                 <Route path={'/'} element={<BestSellers/>} />
+                <Route path={'product'} element={<Product/>} />
             </Routes>
         </div>
     )
