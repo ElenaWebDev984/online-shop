@@ -1,5 +1,6 @@
 import {useEffect, useState} from "react";
 import axios from "axios";
+import {Link} from "react-router";
 
 export type ProductType = {
     _id: string
@@ -20,10 +21,10 @@ export type ProductType = {
 
 export const BestSellers = () => {
 
-    const [products, setProducts] = useState<any>([])
+    const [products, setProducts] = useState<ProductType[]>([])
 
     useEffect(() => {
-        // обращение к серверу при загрузке страницы
+        // TODO обращение к серверу при загрузке страницы
         const promise = axios.get('https://masterclass.kimitsu.it-incubator.io/api/products')
         promise.then((res) => {
             const products = res.data;
@@ -42,7 +43,7 @@ export const BestSellers = () => {
                             <img src={product.image} alt="img" />
                             <h4>{product.title}</h4>
                             <p className="price">$ {product.price}</p>
-                            <button>Show more</button>
+                            <Link to={'/product'}>Show more</Link>
                         </div>
                     )
                 })}
