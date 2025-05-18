@@ -1,4 +1,4 @@
-import type {  ProductType } from "./BestSellers.tsx";
+import type {ProductType} from "./BestSellers.tsx";
 import rating from "./assets/img/rating.svg";
 import cartWhite from "./assets/img/cartWhite.svg";
 import {Link, useParams} from "react-router";
@@ -10,17 +10,20 @@ import {Reviews} from "./Reviews.tsx";
 export const Product = () => {
     const [product, setProduct] = useState<ProductType | null>(null);
 
+    const [isProductInCart, setIsProductIncart] = useState<boolean>(false);
+
     const {productId} = useParams();
-    console.log(productId)
 
     useEffect(() => {
         axios
-            .get(`https://masterclass.kimitsu.it-incubator.io/api/products/${productId}`)
-            .then((res) => {
-                const product = res.data;
-                setProduct(product);
-            });
+            .get(`https://masterclass.kimitsu.it-incubator.io/api/products/${productId}`,)
+            .then((res) => setProduct(res.data));
     }, []);
+
+    const addProductToCartHandler = () => {
+        alert("Товар успешно добавлен в корзину");
+        setIsProductIncart(true);
+    };
 
 
     if (product === null) {
@@ -29,35 +32,37 @@ export const Product = () => {
 
 
     return (
-        <div>
+        <>
             <div className="arrowBack">
                 <Link to={"/"}>
-                    <img src={arrowBack} alt="arrowBack" />
+                    <img src={arrowBack} alt="arrowBack"/>
                     Back to Best Seller
                 </Link>
             </div>
 
             <div className="product">
-                <img src={product.image} alt="" />
+                <img src={product.image} alt=""/>
                 <div className="info">
                     <p className="title">{product.title}</p>
                     <p className="price">$ {product.price}</p>
                     <div className="rating">
                         <p>Rating: {product.rating.rate}</p>
-                        <img src={rating} alt="" />
+                        <img src={rating} alt=""/>
                     </div>
                     <div className="category">
                         <span>Category:</span>
                         <p>{product.category}</p>
                     </div>
                     <p className="description">{product.description}</p>
-                    <button>
-                        <img src={cartWhite} alt="" />
-                        Add to cart
+                    <button
+                        onClick={addProductToCartHandler}
+                        className={`button ${isProductInCart ? "active" : ""}`}>
+                        <img src={isProductInCart ? cart : cartWhite} alt="cart icon"/>
+                        {isProductInCart ? "Go to cart" : "Add to cart"}
                     </button>
                 </div>
             </div>
             <Reviews/>
-        </div>
+        </>
     );
 };
