@@ -50,7 +50,7 @@ export const Reviews = () => {
     return (
         <div>
             <div className="review">
-                <h3>Reviews (189)</h3>
+                <h3>Reviews ({reviews.length})</h3>
                 <textarea
                     value={currentReview}
                     placeholder="Provide your text..."
