@@ -33,17 +33,20 @@ export const BestSellers = () => {
 
 
     return (
-        <div className="cards">
-            {products.map((product) => {
-                return (
-                    <div className="card" key={product.id}>
-                        <img src={product.image} alt="img" />
-                        <h4>{product.title}</h4>
-                        <p className="price">$ {product.price}</p>
-                        <button>Show more</button>
-                    </div>
-                )
-            })}
+        <div className={'bestSeller'}>
+            <h2>Bestsellers</h2>
+            <div className="cards">
+                {products.map((product) => {
+                    return (
+                        <div className="card" key={product.id}>
+                            <img src={product.image} alt="img" />
+                            <h4>{product.title}</h4>
+                            <p className="price">$ {product.price}</p>
+                            <button>Show more</button>
+                        </div>
+                    )
+                })}
+            </div>
         </div>
     );
 };
