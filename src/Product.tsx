@@ -3,13 +3,17 @@ import { useEffect, useState } from "react";
 import type {  ProductType } from "./BestSellers.tsx";
 import rating from "./assets/img/rating.svg";
 import cartWhite from "./assets/img/cartWhite.svg";
+import {useParams} from "react-router";
 
 export const Product = () => {
     const [product, setProduct] = useState<ProductType | null>(null);
 
+    const {productId} = useParams();
+    console.log(productId)
+
     useEffect(() => {
         axios
-            .get("https://masterclass.kimitsu.it-incubator.io/api/products/1")
+            .get(`https://masterclass.kimitsu.it-incubator.io/api/products/${productId}`)
             .then((res) => {
                 const product = res.data;
                 setProduct(product);
