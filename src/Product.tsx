@@ -5,6 +5,7 @@ import {Link, useParams} from "react-router";
 import arrowBack from "./assets/img/arrowBack.svg";
 import {useEffect, useState} from "react";
 import axios from "axios";
+import {Reviews} from "./Reviews.tsx";
 
 export const Product = () => {
     const [product, setProduct] = useState<ProductType | null>(null);
@@ -56,6 +57,7 @@ export const Product = () => {
                     </button>
                 </div>
             </div>
+            <Reviews/>
         </div>
     );
 };
