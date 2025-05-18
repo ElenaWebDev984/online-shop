@@ -1,6 +1,7 @@
 import type {ProductType} from "./BestSellers.tsx";
 import rating from "./assets/img/rating.svg";
 import cartWhite from "./assets/img/cartWhite.svg";
+import cart from "./assets/img/cart.svg";
 import {Link, useParams} from "react-router";
 import arrowBack from "./assets/img/arrowBack.svg";
 import {useEffect, useState} from "react";
@@ -10,7 +11,7 @@ import {Reviews} from "./Reviews.tsx";
 export const Product = () => {
     const [product, setProduct] = useState<ProductType | null>(null);
 
-    const [isProductInCart, setIsProductIncart] = useState<boolean>(false);
+    const [isProductInCart, setIsProductInCart] = useState<boolean>(false);
 
     const {productId} = useParams();
 
@@ -22,7 +23,7 @@ export const Product = () => {
 
     const addProductToCartHandler = () => {
         alert("Товар успешно добавлен в корзину");
-        setIsProductIncart(true);
+        setIsProductInCart(true);
     };
 
 
