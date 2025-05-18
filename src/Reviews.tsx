@@ -43,6 +43,7 @@ export const Reviews = () => {
             rating: 5,
         };
         setReviews([newReview, ...reviews]);
+        setCurrentReview("");
     };
 
 
