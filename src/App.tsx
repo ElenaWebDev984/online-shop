@@ -7,10 +7,10 @@ import {Product} from "./Product.tsx";
 function App() {
     return (
         <div className="appContainer">
-            <Header />
+            <Header/>
             <Routes>
-                <Route path='/' element={<BestSellers/>} />
-                <Route path='/product/:productId' element={<Product/>} />
+                <Route path='/' element={<BestSellers/>}/>
+                <Route path='/product/:productId' element={<Product/>}/>
             </Routes>
         </div>
     )

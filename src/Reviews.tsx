@@ -63,7 +63,7 @@ export const Reviews = () => {
                         <div className="reviewField">
                             <div className="info">
                                 <div className="user">
-                                    <img src={avatarIcon} alt="" />
+                                    <img src={avatarIcon} alt=""/>
                                     <div className="infoBox">
                                         <p className="author">{r.author}</p>
                                         <p className="rating">{r.rating} Rating</p>

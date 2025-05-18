@@ -40,7 +40,7 @@ export const BestSellers = () => {
                 {products.map((product) => {
                     return (
                         <div className="card" key={product.id}>
-                            <img src={product.image} alt="img" />
+                            <img src={product.image} alt="img"/>
                             <h4>{product.title}</h4>
                             <p className="price">$ {product.price}</p>
                             <Link to={`/product/${product.id}`}>Show more</Link>
