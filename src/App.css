@@ -24,7 +24,6 @@
 }
 
 
-
 /*Карточки*/
 .cards {
   display: flex;
@@ -51,7 +50,7 @@
 .card h4 {
   font-size: 18px;
   text-align: center;
-  margin-bottom: 0px;
+  margin-bottom: 0;
   color: #223263;
   padding: 0 36px;
   flex: 1;
@@ -65,7 +64,8 @@
   margin-bottom: 30px;
 }
 
-.card button {
+.card button,
+.card a {
   background-color: white;
   border: 1px solid #2068F8;
   border-radius: 2px;
@@ -106,7 +106,6 @@
   margin-bottom: 62px;
 }
 
-
 .product img {
   width: 60%;
   height: 504px;
@@ -124,7 +123,6 @@
   font-size: 24px;
   font-weight: 500;
   line-height: 30px;
-  font-weight: 500px;
   margin: 0 0 7px 0;
 }
 
@@ -198,7 +196,6 @@
   font-weight: 500;
   font-size: 16px;
   line-height: 20px;
-  justify-content: flex-end;
   display: flex;
   justify-content: center;
 }
@@ -224,7 +221,6 @@
   font-size: 24px;
   font-weight: 500;
   line-height: 30px;
-  font-weight: 500px;
   margin: 0 0 30px 0;
 }
 
@@ -263,7 +259,6 @@
   width: 170px;
 }
 
-
 .reviewField {
   padding: 38px 48px 50px;
   background: #FFFFFF;
@@ -286,7 +281,6 @@
   margin-right: 12px;
 }
 
-
 .reviewField .info .user .infoBox {
   display: flex;
   flex-direction: column;
@@ -304,11 +298,9 @@
   margin: 0;
 }
 
-
 .reviewField .info .date {
   margin: 0;
 }
-
 
 .reviewField .content .title {
   font-weight: 700;
